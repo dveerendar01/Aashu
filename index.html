@@ -387,23 +387,24 @@
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-transparent via-rosegold to-transparent"></div>
             
             <h2 class="font-serif text-2xl font-semibold mb-1">Make a Birthday Wish</h2>
-            <p id="cakeInstruction" class="text-xs text-rosegold mb-6">Wish locked in! ✨</p>
+            <!-- <p id="cakeInstruction" class="text-xs text-rosegold mb-6">Wish locked in! ✨</p> -->
+            <p id="cakeInstruction" class="text-xs text-rosegold mb-6 animate-pulse">Tap the glowing candles to blow them out ✨</p>
 
             <!-- Interactive 3D-Style CSS Cake -->
             <div class="cake-container my-4" onclick="blowOutCandles()" role="button" aria-label="Birthday cake with glowing candles">
                 <!-- Candles -->
                 <div class="candles-row">
                     <div class="candle">
-                        <div class="flame blown-out" id="flame1"></div>
-                        <div class="smoke active" id="smoke1"></div>
+                        <div class="flame" id="flame1"></div>
+                        <div class="smoke" id="smoke1"></div>
                     </div>
                     <div class="candle" style="height: 42px; margin-top: -6px;">
-                        <div class="flame blown-out" id="flame2"></div>
-                        <div class="smoke active" id="smoke2"></div>
+                        <div class="flame" id="flame2"></div>
+                        <div class="smoke" id="smoke2"></div>
                     </div>
                     <div class="candle">
-                        <div class="flame blown-out" id="flame3"></div>
-                        <div class="smoke active" id="smoke3"></div>
+                        <div class="flame" id="flame3"></div>
+                        <div class="smoke" id="smoke3"></div>
                     </div>
                 </div>
 
@@ -432,7 +433,8 @@
             </div>
 
             <!-- Post-blowout Celebration Action -->
-            <div id="cakeCelebrationMsg" class="mt-4 space-y-3">
+            <!-- <div id="cakeCelebrationMsg" class="mt-4 space-y-3"> -->
+            <div id="cakeCelebrationMsg" class="mt-4 space-y-3 hidden">
                 <p class="text-sm font-medium text-champagne">
                     🎉 Yay! May every wish you make today come true!
                 </p>
@@ -454,7 +456,7 @@
             <div class="grid grid-cols-1 gap-4">
                 <!-- Card 1 -->
                 <div class="perspective-1000 h-36 cursor-pointer" onclick="flipCard(this)">
-                    <div class="transform-style-3d relative w-full h-full rotate-y-180">
+                    <div class="transform-style-3d relative w-full h-full">
                         <!-- Front -->
                         <div class="backface-hidden absolute inset-0 glass-card rounded-2xl p-5 flex items-center justify-between border-white/10 hover:border-rosegold/40 transition">
                             <div class="flex items-center gap-4">
@@ -479,7 +481,7 @@
 
                 <!-- Card 2 -->
                 <div class="perspective-1000 h-36 cursor-pointer" onclick="flipCard(this)">
-                    <div class="transform-style-3d relative w-full h-full rotate-y-180">
+                    <div class="transform-style-3d relative w-full h-full">
                         <!-- Front -->
                         <div class="backface-hidden absolute inset-0 glass-card rounded-2xl p-5 flex items-center justify-between border-white/10 hover:border-lavender/40 transition">
                             <div class="flex items-center gap-4">
@@ -504,7 +506,7 @@
 
                 <!-- Card 3 -->
                 <div class="perspective-1000 h-36 cursor-pointer" onclick="flipCard(this)">
-                    <div class="transform-style-3d relative w-full h-full rotate-y-180">
+                    <div class="transform-style-3d relative w-full h-full">
                         <!-- Front -->
                         <div class="backface-hidden absolute inset-0 glass-card rounded-2xl p-5 flex items-center justify-between border-white/10 hover:border-champagne/40 transition">
                             <div class="flex items-center gap-4">
@@ -586,7 +588,7 @@
     <!-- ========================================== -->
     <!-- LETTER MODAL OVERLAY                       -->
     <!-- ========================================== -->
-    <div id="letterModal" class="fixed inset-0 z-50 items-center justify-center p-5 bg-midnight/85 backdrop-blur-md transition-opacity duration-300 flex">
+    <div id="letterModal" class="fixed inset-0 z-50 items-center justify-center p-5 bg-midnight/85 backdrop-blur-md transition-opacity duration-300 hidden">
         <div class="glass-card rounded-3xl max-w-md w-full p-6 sm:p-8 relative border border-white/20 shadow-2xl transform transition-transform duration-300 scale-100" id="letterModalBox">
             
             <!-- Close Button -->
